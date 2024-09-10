@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
-const name = greeting();
+const userName = greeting();
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let counter = 0;
@@ -28,5 +28,5 @@ for (let i = 0; i < 3; i += 1) {
   }
 }
 if (counter === 3) {
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 }
