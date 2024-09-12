@@ -1,7 +1,16 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import greeting from '../src/cli.js';
-const userName = greeting();
+
+console.log('Welcome to the Brain Games!');
+
+function greeting() {
+  const name = readlineSync.question('May I have your name? ');
+  //console.log(`Hello, ${name}!`);
+  return `${name}`;
+}
+
+const name = greeting();
+console.log(`Hello, ${name}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let counter = 0;
@@ -28,5 +37,5 @@ for (let i = 0; i < 3; i += 1) {
   }
 }
 if (counter === 3) {
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${name}!`);
 }
