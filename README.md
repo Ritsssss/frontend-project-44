@@ -3,3 +3,6 @@
 
 ### Code Climate badge 
 <a href="https://codeclimate.com/github/Ritsssss/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/a630900a3fd2897d6ee1/maintainability" /></a>
+
+### Step 5
+https://asciinema.org/a/JpVxsvegIayHJXpglElAPtOzx
