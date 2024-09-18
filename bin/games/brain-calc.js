@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/games/env node
 export const description = 'What is the result of the expression?';
 
 export const gameLogic = () => {
