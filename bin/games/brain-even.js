@@ -1,4 +1,6 @@
-#!/usr/bin/games/env node
+#!/usr/bin/env node
+import { playGame } from '../../src/index.js';
+
 export const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export function evenOrNot(someNumber) {
@@ -13,3 +15,5 @@ export const gameLogic = () => {
   const correctAnswer = evenOrNot(question);
   return { question, correctAnswer };
 };
+
+playGame(description, gameLogic);

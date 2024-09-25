@@ -18,3 +18,6 @@ brain-calc:
 
 start-game:
 	node src/index.js
+
+brain-gcd:
+	node bin/brain-gcd.js

@@ -1,7 +1,9 @@
-#!/usr/bin/games/env node
-export const description = 'What is the result of the expression?';
+#!/usr/bin/env node
+import { playGame } from '../../src/index.js';
 
-export const gameLogic = () => {
+const description = 'What is the result of the expression?';
+
+const gameLogic = () => {
   const randomNumberOne = Math.floor(Math.random() * 20 + 1);
   const randomNumberTwo = Math.floor(Math.random() * 20 + 1);
   const randomOperator = Math.floor(Math.random() * 3);
@@ -23,4 +25,6 @@ export const gameLogic = () => {
       correctAnswer = String(randomNumberOne * randomNumberTwo);
       return { question, correctAnswer };
   }
-}
+};
+
+playGame(description, gameLogic);

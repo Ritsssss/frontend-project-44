@@ -1,8 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 import readlineSync from 'readline-sync';
-import * as even from '../bin/games/brain-even.js';
-import * as calc from '../bin/games/brain-calc.js';
+/* import * as even from '../bin/games/brain-even.js';
+import * as calc from '../bin/games/brain-calc.js'; */
 
-function playGame(gameDescription, gameLogic) {
+export function playGame(gameDescription, gameLogic) {
   console.log(`Welcome to the Brain Games!`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}`);
@@ -24,7 +25,8 @@ function playGame(gameDescription, gameLogic) {
   console.log(`Congratulations, ${userName}!`);
 }
 
-const selectedGame = readlineSync.question('Pick a game (1 или 2): ');
+/*
+const selectedGame = readlineSync.question('Pick a game (1 or 2): ');
 
 switch (selectedGame) {
   case '1':
@@ -35,4 +37,4 @@ switch (selectedGame) {
     break;
   default:
     console.log('Wrong choice!');
-}
+} */
