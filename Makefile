@@ -21,3 +21,6 @@ start-game:
 
 brain-gcd:
 	node bin/brain-gcd.js
+
+brain-progression: 
+	node bin/btain-progression.js
