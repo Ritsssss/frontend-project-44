@@ -7,7 +7,7 @@ const gameLogic = () => {
   const randomNumberOne = Math.floor(Math.random() * 20 + 1);
   const randomNumberTwo = Math.floor(Math.random() * 20 + 1);
   const question = `${randomNumberOne} ${randomNumberTwo}`;
-  
+
   let correctAnswer = 0;
 
   const arrayOne = [];
@@ -32,7 +32,7 @@ const gameLogic = () => {
     for (let j = 0; j < arrayTwo.length; j += 1) {
       if (arrayOne[i] === arrayTwo[j] && arrayOne[i] > correctAnswer) {
         correctAnswer = String(arrayOne[i]);
-    }
+      }
     }
   }
   return { question, correctAnswer };

@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 import * as calc from '../bin/games/brain-calc.js'; */
 
 export function playGame(gameDescription, gameLogic) {
-  console.log(`Welcome to the Brain Games!`);
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}`);
 

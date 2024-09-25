@@ -23,4 +23,4 @@ export const gameLogic = () => {
       correctAnswer = String(randomNumberOne * randomNumberTwo);
       return { question, correctAnswer };
   }
-}
+};
