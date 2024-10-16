@@ -4,6 +4,7 @@ import { playGame } from '../index.js';
 
 const description = 'What is the result of the expression?';
 
+// eslint-disable-next-line consistent-return
 const calculateAnswer = (num1, num2, operator) => {
   switch (operator) {
     case '+':
@@ -25,8 +26,10 @@ const gameLogic = () => {
   switch (randomOperator) {
     case 0:
       operator = '+';
+    // eslint-disable-next-line no-fallthrough
     case 1:
       operator = '-';
+    // eslint-disable-next-line no-fallthrough
     case 2:
       operator = '*';
   }
