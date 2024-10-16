@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-import { playGame } from '../../src/index.js';
+import { playGame } from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
 const findGCD = (num1, num2) => {
-  
   const arrayOne = [];
   const arrayTwo = [];
 

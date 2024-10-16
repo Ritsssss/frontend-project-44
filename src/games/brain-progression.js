@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { playGame } from '../../src/index.js';
+import { playGame } from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -16,7 +16,7 @@ const createProgression = (firstItem, step, length) => {
 };
 
 const gameLogic = () => {
-  let a = Math.floor(Math.random() * 20 + 1);
+  const a = Math.floor(Math.random() * 20 + 1);
   const d = Math.floor(Math.random() * 10 + 1);
   const progressionLength = 10;
 
