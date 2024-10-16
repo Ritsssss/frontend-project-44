@@ -3,25 +3,22 @@ import { playGame } from '../../src/index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gameLogic = () => {
-  const randomNumberOne = Math.floor(Math.random() * 20 + 1);
-  const randomNumberTwo = Math.floor(Math.random() * 20 + 1);
-  const question = `${randomNumberOne} ${randomNumberTwo}`;
-
-  let correctAnswer = 0;
-
+const findGCD = (num1, num2) => {
+  
   const arrayOne = [];
   const arrayTwo = [];
 
+  let correctAnswer = 0;
+
   // create two arrays
-  for (let divisorOne = 1; divisorOne < randomNumberOne + 1; divisorOne += 1) {
-    if (randomNumberOne % divisorOne === 0) {
+  for (let divisorOne = 1; divisorOne < num1 + 1; divisorOne += 1) {
+    if (num1 % divisorOne === 0) {
       arrayOne.push(divisorOne);
     }
   }
 
-  for (let divisorTwo = 1; divisorTwo < randomNumberTwo + 1; divisorTwo += 1) {
-    if (randomNumberTwo % divisorTwo === 0) {
+  for (let divisorTwo = 1; divisorTwo < num2 + 1; divisorTwo += 1) {
+    if (num2 % divisorTwo === 0) {
       arrayTwo.push(divisorTwo);
     }
   }
@@ -35,6 +32,15 @@ const gameLogic = () => {
       }
     }
   }
+  return correctAnswer;
+};
+
+const gameLogic = () => {
+  const randomNumberOne = Math.floor(Math.random() * 20 + 1);
+  const randomNumberTwo = Math.floor(Math.random() * 20 + 1);
+  const question = `${randomNumberOne} ${randomNumberTwo}`;
+
+  const correctAnswer = String(findGCD(randomNumberOne, randomNumberTwo));
   return { question, correctAnswer };
 };
 
