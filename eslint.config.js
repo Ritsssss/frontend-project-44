@@ -14,3 +14,9 @@ export default [
   { languageOptions: { globals: globals.browser } },
   ...compat.extends('airbnb'),
 ];
+
+module.exports = {
+  rules: {
+    'max-len': ['error', { code: 120 }], 
+  },
+};
