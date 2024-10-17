@@ -7,14 +7,16 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 const isPrime = (num) => {
   let correctAnswer;
   if (num === 1) {
+    correctAnswer = 'no';
+  } else if (num === 2) {
     correctAnswer = 'yes';
   } else {
+    correctAnswer = 'yes';
     for (let i = 2; i < num; i += 1) {
       if (num % i === 0) {
         correctAnswer = 'no';
         break;
       }
-      correctAnswer = 'yes';
     }
   }
   return correctAnswer;
