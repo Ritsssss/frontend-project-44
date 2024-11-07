@@ -1,42 +1,27 @@
-#!/usr/bin/env node
-/* eslint-disable default-case */
-import { playGame } from '../index.js';
+export default function brainCalc() {
+  const description = 'What is the result of the expression?';
 
-const description = 'What is the result of the expression?';
+  const calculateAnswer = (num1, num2, operator) => {
+    switch (operator) {
+      case '+':
+        return num1 + num2;
+      case '-':
+        return num1 - num2;
+      case '*':
+        return num1 * num2;
+      default:
+        return null;
+    }
+  };
 
-// eslint-disable-next-line consistent-return
-const calculateAnswer = (num1, num2, operator) => {
-  switch (operator) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
-  }
-};
-
-const gameLogic = () => {
-  const randomNumberOne = Math.floor(Math.random() * 20 + 1);
-  const randomNumberTwo = Math.floor(Math.random() * 20 + 1);
-  const randomOperator = Math.floor(Math.random() * 3);
-
-  let operator;
-
-  switch (randomOperator) {
-    case 0:
-      operator = '+';
-    // eslint-disable-next-line no-fallthrough
-    case 1:
-      operator = '-';
-    // eslint-disable-next-line no-fallthrough
-    case 2:
-      operator = '*';
-  }
-
-  const question = `${randomNumberOne} ${operator} ${randomNumberTwo}`;
-  const correctAnswer = String(calculateAnswer(randomNumberOne, randomNumberTwo, operator));
-  return { question, correctAnswer };
-};
-
-playGame(description, gameLogic);
+  const gameLogic = () => {
+    const randomNumberOne = Math.floor(Math.random() * 20 + 1);
+    const randomNumberTwo = Math.floor(Math.random() * 20 + 1);
+    const operators = ['+', '-', '*'];
+    const operator = operators[Math.floor(Math.random() * operators.length)];
+    const question = `${randomNumberOne} ${operator} ${randomNumberTwo}`;
+    const correctAnswer = String(calculateAnswer(randomNumberOne, randomNumberTwo, operator));
+    return { question, correctAnswer };
+  };
+  return { description, gameLogic };
+}

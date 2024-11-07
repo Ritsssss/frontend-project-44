@@ -1,31 +1,25 @@
-#!/usr/bin/env node
+export default function brainPrime() {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-import { playGame } from '../index.js';
-
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-const isPrime = (num) => {
-  let correctAnswer;
-  if (num === 1) {
-    correctAnswer = 'no';
-  } else if (num === 2) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'yes';
+  const isPrime = (num) => {
+    if (num === 1) {
+      return false;
+    }
+    if (num === 2) {
+      return true;
+    }
     for (let i = 2; i < num; i += 1) {
       if (num % i === 0) {
-        correctAnswer = 'no';
-        break;
+        return false;
       }
     }
-  }
-  return correctAnswer;
-};
+    return true;
+  };
 
-const gameLogic = () => {
-  const question = Math.floor(Math.random() * 20 + 1);
-  const correctAnswer = String(isPrime(question));
-  return { question, correctAnswer };
-};
-
-playGame(description, gameLogic);
+  const gameLogic = () => {
+    const question = Math.floor(Math.random() * 20 + 1);
+    const correctAnswer = isPrime(question) ? 'yes' : 'no';
+    return { question, correctAnswer };
+  };
+  return { description, gameLogic };
+}
