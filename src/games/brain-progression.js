@@ -1,33 +1,36 @@
-export default function brainProgression() {
-  const description = 'What number is missing in the progression?';
+import playGame from '../index.js';
 
-  const createProgression = (firstItem, step, length) => {
-    const questionArray = [];
-    let l = firstItem;
+const description = 'What number is missing in the progression?';
 
-    for (let i = 0; i < length; i += 1) {
-      questionArray.push(l);
-      l += step;
-    }
-    return questionArray;
-  };
+const createProgression = (firstItem, step, length) => {
+  const questionArray = [];
+  let l = firstItem;
 
-  const gameLogic = () => {
-    const a = Math.floor(Math.random() * 20 + 1);
-    const d = Math.floor(Math.random() * 10 + 1);
-    const progressionLength = 10;
+  for (let i = 0; i < length; i += 1) {
+    questionArray.push(l);
+    l += step;
+  }
+  return questionArray;
+};
 
-    const questionArray = createProgression(a, d, progressionLength);
+const gameLogic = () => {
+  const a = Math.floor(Math.random() * 20 + 1);
+  const d = Math.floor(Math.random() * 10 + 1);
+  const progressionLength = 10;
 
-    const missingNumber = Math.floor(Math.random() * progressionLength);
+  const questionArray = createProgression(a, d, progressionLength);
 
-    const correctAnswer = String(questionArray[missingNumber]);
+  const missingNumber = Math.floor(Math.random() * progressionLength);
 
-    questionArray[missingNumber] = '..';
+  const correctAnswer = String(questionArray[missingNumber]);
 
-    const question = questionArray.join(' ');
+  questionArray[missingNumber] = '..';
 
-    return { question, correctAnswer };
-  };
-  return { description, gameLogic };
-}
+  const question = questionArray.join(' ');
+
+  return { question, correctAnswer };
+};
+
+export default () => {
+  playGame(description, gameLogic);
+};

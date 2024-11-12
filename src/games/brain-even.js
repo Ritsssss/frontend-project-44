@@ -1,14 +1,17 @@
-export default function brainEven() {
-  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+import playGame from '../index.js';
 
-  function isEven(someNumber) {
-    return someNumber % 2 === 0;
-  }
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const gameLogic = () => {
-    const question = Math.floor(Math.random() * 20 + 1);
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
-    return { question, correctAnswer };
-  };
-  return { description, gameLogic };
+function isEven(someNumber) {
+  return someNumber % 2 === 0;
 }
+
+const gameLogic = () => {
+  const question = Math.floor(Math.random() * 20 + 1);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return { question, correctAnswer };
+};
+
+export default () => {
+  playGame(description, gameLogic);
+};
